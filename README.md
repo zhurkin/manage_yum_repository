@@ -21,6 +21,7 @@ minimal:
 result:
 -------
 Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory
+--------------------------------------------------------------
 example of the file content:
 ----------------------------
     [CentOS-Base]
