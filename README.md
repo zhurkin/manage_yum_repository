@@ -20,9 +20,8 @@ Example Variables
         description: Centos Base repository
 
 #### result:
-Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory
-
-#### example of the file content CentOS-Base.repo:
+Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory  
+example of the file content CentOS-Base.repo:
 
     [CentOS-Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
