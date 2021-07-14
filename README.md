@@ -20,8 +20,8 @@ Example Variables
         description: Centos Base repository
 
 #### result example one:
-Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory  
-example of the file content CentOS-Base.repo:
+Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory  
+example of the file content **CentOS-Base.repo**:
 
     [CentOS-Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
@@ -43,7 +43,8 @@ example of the file content CentOS-Base.repo:
 #### result example two:
 Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory  
 but the name will be used by **base**  
-example of the file content **CentOS-Base.repo**:  
+example of the file content **CentOS-Base.repo**:
+
     [Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
     enabled = 0
