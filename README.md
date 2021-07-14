@@ -31,7 +31,7 @@ example of the file content **CentOS-Base.repo**:
 
 #### example two
     manage_yum_repository:
-      - name: Base
+      - name: base
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
         description: CentOS-$releasever - Base
         file: CentOS-Base
@@ -45,14 +45,81 @@ Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory
 but the name will be used by **base**  
 example of the file content **CentOS-Base.repo**:
 
-    [Base]
+    [base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
     enabled = 0
     gpgcheck = 1
     gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
     name = CentOS-$releasever - Base
 
+### example three:
+Add multiple repositories into the same file.  
+To do this, it is necessary that the variable **file** matches.
+
+    manage_yum_repository:
+      - name: base
+        baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+        description: CentOS-$releasever - Base
+        file: CentOS-Base
+        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        gpgcheck: yes
+        state: present
+
+      - name: updates
+        baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
+        description: CentOS-$releasever - Updates
+        file: CentOS-Base
+        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        gpgcheck: yes
+        state: present
+
+      - name: extras
+        baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
+        description: CentOS-$releasever - Extras
+        file: CentOS-Base
+        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        gpgcheck: yes
+        state: present
+
+      - name: centosplus
+        baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
+        description: CentOS-$releasever - Plus
+        file: CentOS-Base
+        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        gpgcheck: yes
+        state: present
+
 ### result three:
+Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory  
+The file contains multi-line text **base**, **updates**, **extras** and **centosplus**.
+
+    [base]
+    baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+    enabled = 1
+    gpgcheck = 1
+    gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    name = CentOS-$releasever - Base
+
+    [updates]
+    baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
+    enabled = 1
+    gpgcheck = 1
+    gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    name = CentOS-$releasever - Updates
+
+    [extras]
+    baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
+    enabled = 1
+    gpgcheck = 1
+    gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    name = CentOS-$releasever - Extras
+
+    [centosplus]
+    baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
+    enabled = 1
+    gpgcheck = 1
+    gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    name = CentOS-$releasever - Plus
 
 
 Example Playbook
