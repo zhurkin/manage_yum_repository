@@ -19,17 +19,15 @@ minimal:
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
         description: Centos Base repository
 result:
-    manage_yum_repository:
+-------
 Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory
-
 example of the file content:
+----------------------------
     [CentOS-Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
     enabled = 1
     gpgcheck = 0
     name = Centos Base repository
-
-
 Example Playbook
 ----------------
 
@@ -42,8 +40,6 @@ Including an example of how to use your role (for instance, with variables passe
 
 License
 -------
-
-BSD
 
 Author Information
 ------------------
