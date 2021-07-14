@@ -12,14 +12,14 @@ Role Variables
 
 Example Variables
 -----------------
-#### minimal:
+#### example one - minimal:
 
     manage_yum_repository:
       - name: CentOS-Base
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
         description: Centos Base repository
 
-#### result:
+#### result example one:
 Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory  
 example of the file content CentOS-Base.repo:
 
@@ -28,6 +28,28 @@ example of the file content CentOS-Base.repo:
     enabled = 1
     gpgcheck = 0
     name = Centos Base repository
+
+#### example two
+    manage_yum_repository:
+      - name: CentOS-Base
+        baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+        description: Centos Base repository
+        gpgkey: gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        gpgcheck: yes
+        state: present
+        enabled: no
+
+#### result example two:
+    [Base]
+    baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+    enabled = 0
+    gpgcheck = 1
+    gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    name = CentOS-$releasever - Base
+
+### result three:
+
+
 Example Playbook
 ----------------
 
