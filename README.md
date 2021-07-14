@@ -31,10 +31,10 @@ example of the file content CentOS-Base.repo:
 
 #### example two
     manage_yum_repository:
-      - name: **Base**
+      - name: Base
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
         description: CentOS-$releasever - Base
-        file: **CentOS-Base**
+        file: CentOS-Base
         gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
         gpgcheck: yes
         state: present
@@ -43,7 +43,7 @@ example of the file content CentOS-Base.repo:
 #### result example two:
 Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory  
 but the name will be used by **base**  
-example of the file content **CentOS-Base.repo**:
+example of the file content **CentOS-Base.repo**:  
     [Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
     enabled = 0
