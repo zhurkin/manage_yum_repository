@@ -12,18 +12,18 @@ Role Variables
 
 Example Variables
 -----------------
-minimal:
---------
+#### minimal:
+
     manage_yum_repository:
       - name: CentOS-Base
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
         description: Centos Base repository
-result:
--------
+
+#### result:
 Create file CentOS-Base.repo in to /etc/yum.repos.d/ directory
---------------------------------------------------------------
-example of the file content:
-----------------------------
+
+#### example of the file content CentOS-Base.repo:
+
     [CentOS-Base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
     enabled = 1
