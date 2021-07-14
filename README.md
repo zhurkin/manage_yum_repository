@@ -61,7 +61,7 @@ example of the file content **CentOS-Base.repo**:
     name = CentOS-$releasever - Base
 
 ### example three:
-Add multiple repositories into the same file.  
+Add multiple repositories into the same file **CentOS-Base.repo**.  
 To do this, it is necessary that the variable **file** matches.
 
     manage_yum_repository:
@@ -99,7 +99,7 @@ To do this, it is necessary that the variable **file** matches.
 
 ### result three:
 Create file **CentOS-Base.repo** in to /etc/yum.repos.d/ directory  
-The file contains multi-line text **base**, **updates**, **extras** and **centosplus**.
+The file **CentOS-Base.repo** contains multi-line text **base**, **updates**, **extras** and **centosplus**.
 
     [base]
     baseurl = http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
