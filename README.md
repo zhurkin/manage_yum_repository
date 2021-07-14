@@ -10,6 +10,14 @@ Role Variables
 
 `manage_yum_repository_other`: []
 
+Enable or disable the repository, the **enable** variable.  
+By default, **yes**.
+
+delete or create a repository, the **state** variable.  
+By default, **present** .
+
+more information about the [module parameters](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_repository_module.html)
+
 Example Variables
 -----------------
 #### example one - minimal:
