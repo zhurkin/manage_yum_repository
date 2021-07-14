@@ -31,10 +31,11 @@ example of the file content CentOS-Base.repo:
 
 #### example two
     manage_yum_repository:
-      - name: CentOS-Base
+      - name: Base
         baseurl: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
-        description: Centos Base repository
-        gpgkey: gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+        description: CentOS-$releasever - Base
+        file: CentOS-Base
+        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
         gpgcheck: yes
         state: present
         enabled: no
