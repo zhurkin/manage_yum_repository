@@ -146,5 +146,5 @@ License
 Author Information
 ------------------
 
-Vladimir Zhurkin 
+Vladimir Zhurkin    
  ansible@icce.im
